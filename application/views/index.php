@@ -34,53 +34,54 @@
 <script src="assets/js/jqueryeasing.js"></script>
 <script>
     $(function(){
+        window.onload = function(){
+            change();
+            $(".title").on("click",function(){
+                change()
+            });
+            function change(){
+                var TOTAL = 9;
+                var ANIMATE = ['bounceIn','fadeIn','fadeInDown','fadeInDownBig','fadeInLeft','fadeInRight',
+                    'fadeInRightBig','fadeInUp','flipInX','flipInY','lightSpeedIn','zoomIn'];
+                var img = new Image();
+                img.src = "assets/image/Random/"+ (Random(TOTAL)+1) +".jpg";
+                var index = $(".index");
+                index.removeClass().addClass("index animated");
+                var animateEasing = [],   //存放JQuery animate动画效果名
+                    DIRECT =[['height',['top','bottom']],
+                        ['width',['left','right']]];
+                for(var x in $.easing){
+                    animateEasing.push($.easing[x].name);
+                }
 
-        change();
-        $(".title").on("click",function(){
-           change()
-        });
-        function change(){
-            var TOTAL = 9;
-            var ANIMATE = ['bounceIn','fadeIn','fadeInDown','fadeInDownBig','fadeInLeft','fadeInRight',
-                'fadeInRightBig','fadeInUp','flipInX','flipInY','lightSpeedIn','zoomIn'];
-            var img = new Image();
-            img.src = "assets/image/Random/"+ (Random(TOTAL)+1) +".jpg";
-            var index = $(".index");
-            index.removeClass().addClass("index animated");
-            var animateEasing = [],   //存放JQuery animate动画效果名
-                DIRECT =[['height',['top','bottom']],
-                    ['width',['left','right']]];
-            for(var x in $.easing){
-                animateEasing.push($.easing[x].name);
-            }
-            (function(){
-                var DIndex;
-                DIndex = Random(DIRECT.length);
-                var animateIndex = DIRECT[DIndex][0];
-                var mPosition = DIRECT[DIndex][1][Random(DIRECT[DIndex][1].length)];
-              //  console.log(mPosition);
-                index.css({backgroundImage:"url(assets/image/Random/"+ (Random(TOTAL)+1) +".jpg)"});
-                var animateObj = {};
-                animateObj[animateIndex] =0;
-                $(".indexMask").stop().delay(1000).removeAttr("style")
-                    .css(mPosition,'0')
-                    .animate(animateObj
-                        ,1500
-                        ,animateEasing[Random(animateEasing.length)]
-                        ,function(){//obj中不能写key不能写变量名
-                            $("#tip").addClass($("#tip").data('AnimateOut'));
+                img.onload = function(){
+                    (function(){
+                        var DIndex;
+                        DIndex = Random(DIRECT.length);
+                        var animateIndex = DIRECT[DIndex][0];
+                        var mPosition = DIRECT[DIndex][1][Random(DIRECT[DIndex][1].length)];
+                        //  console.log(mPosition);
+                        index.css({backgroundImage:"url(assets/image/Random/"+ (Random(TOTAL)+1) +".jpg)"});
+                        var animateObj = {};
+                        animateObj[animateIndex] =0;
+                        $(".indexMask").stop().delay(1000).removeAttr("style")
+                            .css(mPosition,'0')
+                            .animate(animateObj
+                                ,1500
+                                ,animateEasing[Random(animateEasing.length)]
+                                ,function(){//obj中不能写key不能写变量名
+                                    $("#tip").addClass($("#tip").data('AnimateOut'));
 
-                        });
-                var tipRandom = ANIMATE[Random(ANIMATE.length-1)];
-                $("#tip").removeClass().addClass(tipRandom+" animated").data("AnimateOut",tipRandom.replace("In","Out").replace("Down","Up"));
-                index.addClass(ANIMATE[Random(ANIMATE.length-1)]);
-                img = null;
-            })();
-            /*img.onload = function(){*/
-
-         /*   };*/
-            function Random(index){
-                return Math.floor(Math.random()*index);
+                                });
+                        var tipRandom = ANIMATE[Random(ANIMATE.length-1)];
+                        $("#tip").removeClass().addClass(tipRandom+" animated").data("AnimateOut",tipRandom.replace("In","Out").replace("Down","Up"));
+                        index.addClass(ANIMATE[Random(ANIMATE.length-1)]);
+                        img = null;
+                    })();
+                };
+                function Random(index){
+                    return Math.floor(Math.random()*index);
+                }
             }
         }
     });

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="keywords" content="王帅的个人网站"/>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>livecrystal</title>
     <link rel="stylesheet" href="assets/css/person.css">
 </head>
 <body style="height:2000px;">

@@ -89,7 +89,7 @@ define(function(require){
                 run:function(){
                    this.runing = setInterval(function(){
                         lunbo.next()
-                    },10000);
+                    },5000);
                 },
                 resize:function(){
                     var _this = this;
