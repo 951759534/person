@@ -1,0 +1,257 @@
+/*样式重置开始*/
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol{
+    list-style:none;
+
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+.wrapper{
+    width:60%;
+    height:100%;
+    margin:0 auto;
+    position:relative;
+}
+div,li{
+    box-sizing:border-box;
+}
+/*样式重置结束*/
+/*导航开始*/
+#nav{
+    width:100%;
+    height:50px;
+    background:rgba(3,0,3,.6);
+    position:fixed;
+    z-index:10;
+}
+.nav_bar{
+    height:100%;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:0;
+
+}
+.nav_bar li{
+    float:left;
+    height:100%;
+    width:90px;
+    text-align:center;
+    cursor:pointer;
+   line-height:50px;
+    position:relative;
+}
+.nav_bar li a{
+    padding: 6px 0;
+    text-shadow: none;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    width:100%;
+}
+.nav_bar li a::before {
+    content:"";
+    overflow: hidden;
+    border-bottom: 3px solid #00a78e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:0;
+    transition: all 0.5s ease-in-out;
+}
+.nav_bar>li:hover>a{
+    color:#00a78e
+}
+.nav_bar li:hover a::before{
+    width:100%;
+}
+.nav_active a{
+    color: #00a78e;
+}
+span{
+    color:white;
+}
+/*导航结束*/
+
+/*个人信息开始*/
+
+#person{
+    width:100%;
+    height:800px;
+    background-image: url("../image/person/1.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+#person::before{
+    content: "";
+    height:800px;
+    width:100%;
+    float:left;
+    position:absolute;
+    top:0;
+    background:rgba(0,0,0,.5);
+}
+.person_con{
+    position:absolute;
+    height:600px;
+    width:95%;
+    background:rgba(0,0,0,.2);
+    bottom:50px;
+    padding:60px 50px;
+
+}
+.person_con>ul>li{
+    float:left;
+    height:500px;
+}
+.person_left{
+    width:60%;
+}
+.person_left h2{
+    color:#f2dede;
+    font-weight: 500;
+    padding:20px 0;
+    border-bottom:1px solid #cccccc;
+    width:100%;
+}
+.per_sub_left{
+    width:100%;
+    padding:50px 0 0 0;
+}
+.per_sub_left li{
+    height:80px;
+    width:100%;
+}
+.per_sub_left li span{
+    display:inline-block;
+    width:50%;
+}
+#person_img{
+    padding:10px 2%;
+    width:20%;
+    position:absolute;
+    right: 10%;
+}
+#person_img img{
+    width:60%;
+    position:absolute;
+    top:10%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+/*个人信息结束*/
+/*详细介绍开始*/
+#detail{
+    width:100%;
+    height:690px;
+}
+#detail>div{
+    float:left;
+    height:100%;
+    width:50%;
+}
+.de_left{
+    background-image:url("../image/person/2.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+.de_right{
+    width:900px;
+    overflow: hidden;
+}
+.lunbo{
+    height:690px;
+    width:100%;
+    position:relative;
+}
+.l_content{
+    position:absolute;
+    height:690px;
+    width:400%;    /*只能放四张轮播*/
+    left:0;
+}
+.l_content.mouseDown{
+    cursor: move;
+}
+.l_content li{
+    height:690px;
+    width:25%;
+    float:left;
+    padding:2% 0 0 2%;
+    background-image:url("../image/person/3.jpg");
+    background-repeat: no-repeat;
+    background-position:contain;
+    background-size:cover;
+}
+.lunbo_bar{
+    width:15px;
+    height:78px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:2%;
+}
+.lunbo_bar li{
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    margin-bottom:6px;
+    height:15px;
+    cursor:pointer;
+    background:#191919;
+}
+.lunbo_bar li.active{
+    background:#00a78e;
+
+}
+.d_title{
+    text-align: center;
+    height:50px;
+    width:80%;
+    margin:20px auto;
+    color: #191919;
+    font-size: 30px;
+    font-weight: normal;
+    font-family: 'Asap', sans-serif;
+}
+.d_tell{
+    text-indent: 30px;
+    font-size:20px;
+    width:80%;
+    margin:0 auto;
+    word-break: break-all;
+}
+.d_tell a{
+    color:#191919;
+}
+.suojin{
+    display:inline-block;
+    width:30px;
+    height:20px;
+}
+@media (max-width:993px) {
+    #detail>div{
+        height:100%;
+        width:100%;
+    }
+}
+/*详细介绍结束*/
+/*作品开始*/
+#works{
+    padding-top:100px;
+    text-align: center;
+}
+/*作品结束*/

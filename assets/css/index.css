@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+a{
+    text-decoration: none;
+}
+.index{
+    height:100%;
+    width:100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    float:left;
+}
+@media (max-width: 978px) {
+    .index{
+        background-size: 100% auto;
+        background-repeat: repeat;
+    }
+}
+.indexMask{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.1);
+}
+.nav{
+    height:220px;
+    width:560px;
+    background:rgba(0,0,0,.1);
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    border-radius:15px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+.nav>h2{
+    padding:10px;
+    text-align:center;
+    cursor:pointer;
+    height:60px;
+    font-size:20px;
+    vertical-align: middle;
+    border-bottom:1px solid black;
+    position:relative;
+}
+#tip{
+    position: absolute;
+    top: -102px;
+    right: 20px;
+}
+
+#tip>h5{
+    height: 72px;
+    width: 200px;
+    background: rgba(0,0,0,.1);
+    text-align: center;
+    border-radius: 5px;
+    line-height:72px;
+    cursor:pointer;
+}
+#tip::after{
+    content:"";
+    position:absolute;
+    left:20px;
+    width: 0;
+    height: 0;
+    transform: skew(-19deg);
+    border:20px solid transparent;
+    border-top-color:rgba(0,0,0,.1);
+    border-left-color:rgba(0,0,0,.1);
+}
+.nav span{
+    display: block;
+    text-transform: capitalize;
+}
+.n_footer{
+    height:60px;
+    width:80%;
+    margin:20px auto;
+}
+.person_page{
+    display: inline-block;
+    margin-right:20px;
+    color:black;
+    padding-bottom:5px;
+}
+.person_page:hover{
+    border:1px solid black;
+    border-color: transparent transparent black transparent ;
+}
