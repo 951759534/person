@@ -20,6 +20,11 @@ a{
 div,li{
     box-sizing:border-box;
 }
+.clearfix::after{
+    content: "";
+    display:block;
+    clear: both;
+}
 /*样式重置结束*/
 /*导航开始*/
 #nav{
@@ -35,7 +40,6 @@ div,li{
     top:50%;
     transform:translateY(-50%);
     right:0;
-
 }
 .nav_bar li{
     float:left;
@@ -154,10 +158,11 @@ span{
 #detail{
     width:100%;
     height:690px;
+    position:relative;
 }
 #detail>div{
     float:left;
-    height:100%;
+    height:690px;
     width:50%;
 }
 .de_left{
@@ -242,16 +247,153 @@ span{
     width:30px;
     height:20px;
 }
-@media (max-width:993px) {
+@media (max-width:1200px) {
+    #detail{
+        height:1380px;
+    }
     #detail>div{
-        height:100%;
         width:100%;
     }
 }
 /*详细介绍结束*/
 /*作品开始*/
-#works{
-    padding-top:100px;
-    text-align: center;
+/*#works{
+    padding-top:20px;
+    !*text-align: center;*!
+}*/
+#products {
+    width:80%;
+    margin:0 auto;
+    height:860px;
+}
+#products>li{
+     float:left;
+     width:48%;
+     height:390px;
+     background:#cccccc;
+     cursor:pointer;
+     position:relative;
+        margin:20px 1%;
+    overflow:hidden;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+ }
+#products>li a{
+    float:left;
+    width:100%;
+    height:390px;
+    background:#cccccc;
+    cursor:pointer;
+}
+#products>li:after{
+    content:"";
+    position:absolute;
+    background:rgba(0,0,0,.3);
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+
+}
+#products>li:hover::after{
+    animation-name: mask;
+    -webkit-animation-name: mask;
+    -moz-animation-name: mask;
+    -o-animation-name: mask;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+}
+@keyframes mask {
+    from{
+
+    }90%{
+             opacity:0;
+         }100%{
+            opacity:0;
+            z-index:-1;
+                   }
+
+
+}
+#products>li:hover{
+    box-shadow: 6px 10px 20px 5px rgba(0,0,0,0.3),
+             -10px 0 15px -10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 6px 10px 20px 5px rgba(0,0,0,0.3),
+             -10px 0 15px -10px rgba(0,0,0,0.3);
+    -moz-box-shadow:  6px 10px 20px 5px rgba(0,0,0,0.3),
+             -10px 0 15px -10px rgba(0,0,0,0.3);
+    -o-box-shadow: 6px 10px 20px 5px rgba(0,0,0,0.3),
+             -10px 0 15px -10px rgba(0,0,0,0.3);
+}
+#products>li a img{
+    height:100%;
+    width:100%;
+    opacity: .9;
+}
+#products>li>h5{
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-size:20px;
+    height:30px;
+    width:50%;
+    background:#1b242f;
+    overflow: hidden;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    text-align:center;
+    -webkit-transition: width .5s ease-in-out;
+    -moz-transition: width .5s ease-in-out;
+    -ms-transition: width .5s ease-in-out;
+    -o-transition: width .5s ease-in-out;
+    transition: width .5s ease-in-out;
+}
+#products>li>h5>span{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    font-size:20px;
+    font-weight: 500;
+}
+#products>li:hover>h5{
+    width:0;
+}
+@media (max-width:1100px){
+    #products {
+        width:80%;
+        margin:0 auto;
+        height:1720px;
+    }
+    #products>li{
+        float:left;
+        width:80%;
+        height:390px;
+        background:#cccccc;
+        cursor:pointer;
+        margin:20px 10%;
+    }
 }
 /*作品结束*/
+/*联系开始*/
+#contact{
+    height:500px;
+    line-height:500px;
+    text-align:center;
+
+}
+/*联系结束*/
