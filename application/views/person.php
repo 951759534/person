@@ -14,7 +14,7 @@
             <li data-height="0" class="nav_active"><a href="javascript:;" >个人信息</a></li>
             <li data-height="800"><a href="javascript:;">详细介绍</a></li>
             <li data-height="0"><a href="javascript:;">个人作品</a></li>
-            <li data-height="0"><a href="javascript:;">给我留言</a></li>
+            <li data-height="0"><a href="javascript:;">联系方式</a></li>
         </ul>
     </div>
 </div>
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<div id="detail">
+<div id="detail" class="clearfix">
     <div class="de_left"></div>
 
     <div class="de_right">
@@ -71,7 +71,7 @@
                 <li>
                     <h5 class="d_title">个人介绍</h5>
                     <p class="d_tell">欢迎来到我的个人网站,我是一名热爱编程的少年,我的GitHub地址是
-                        <a href="https://github.com/951759534">https://github.com/951759534</a>.github上有我的
+                        <a href="https://github.com/951759534" target="_blank">https://github.com/951759534</a>.github上有我的
                         许多作品,稍后我会开放我的技术博客,最近这个学期比较忙,没有太多时间去打理我的网站,趁着我的闲暇时间
                         做出了这个网站;<br>
                         <span class="suojin"></span>由于我对网络技术的热爱,促使了我对编程有极大兴趣,受软件专业的熏陶,我的面向对象的思想印象深刻,
@@ -91,8 +91,16 @@
         </div>
     </div>
 </div>
-<div id="works">
-    未完待续......
+<div id="works" class="clearfix">
+        <ul id="products">
+            <li><a href="http://livecrystal.top/products/shoufengqin/"><img src="assets/image/person/shoufengqin.png"></a> <h5><span>css之手风琴</span></h5></li>
+            <li><a href="http://livecrystal.top/product/xuanzhuan/"><img src="assets/image/person/xuanzhuan.png"></a> <h5><span>3d之旋转照片</span></h5></li>
+            <li><a href="http://livecrystal.top/products/zhaopian/"><img src="assets/image/person/zhaopianqiangjiaqiang.png"></a> <h5><span>照片墙加强版</span></h5></li>
+            <li><a href="http://livecrystal.top/products/mobile/"><img src="assets/image/person/mobile.png"></a> <h5><span>移动端照片墙</span></h5></li>
+        </ul>
+</div>
+<div id="contact">
+            未完待续
 </div>
 <script src="assets/js/require.js" data-main="assets/js/person.js"></script>
 <script src="assets/js/console.js"></script>
